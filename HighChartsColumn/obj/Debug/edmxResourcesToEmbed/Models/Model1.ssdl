@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MOEAdminDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="SCHOOLS_DATA">
+    <Key>
+      <PropertyRef Name="School_ID" />
+    </Key>
+    <Property Name="School_ID" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="School_Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="District_ID" Type="decimal" Precision="10" Scale="0" />
+    <Property Name="City" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="EMAIL" Type="nvarchar" MaxLength="255" />
+    <Property Name="Id" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="SchoolTypeId" Type="int" />
+  </EntityType>
+  <EntityType Name="SCHOOLS_DATA_FANY">
+    <Key>
+      <PropertyRef Name="School_ID" />
+    </Key>
+    <Property Name="School_ID" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="School_Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="District_ID" Type="decimal" Precision="10" Scale="0" />
+    <Property Name="City" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="EMAIL" Type="nvarchar" MaxLength="255" />
+    <Property Name="Id" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MOEAdminDb.dbo.STUDENTS_DATA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="STUDENTS_DATA">
+    <Key>
+      <PropertyRef Name="STUDENT_ID" />
+      <PropertyRef Name="SCHOOL_ID" />
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="STUDENT_ID" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="SCHOOL_ID" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="FIRST_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="Last_name" Type="nvarchar(max)" />
+    <Property Name="NATIONALID_4Digit" Type="nvarchar" MaxLength="4" />
+    <Property Name="Id" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MOEAdminDb.dbo.STUDENTS_DATA_FANY' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="STUDENTS_DATA_FANY">
+    <Key>
+      <PropertyRef Name="STUDENT_ID" />
+      <PropertyRef Name="SCHOOL_ID" />
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="STUDENT_ID" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="SCHOOL_ID" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="FIRST_NAME" Type="nvarchar(max)" />
+    <Property Name="Last_name" Type="nvarchar(max)" />
+    <Property Name="NATIONALID_4Digit" Type="nvarchar" MaxLength="4" />
+    <Property Name="Id" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TEACHERS_DATA">
+    <Key>
+      <PropertyRef Name="Teacher_ID" />
+    </Key>
+    <Property Name="Teacher_ID" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="SCHOOL_ID" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Emailaddress" Type="nvarchar" MaxLength="4000" />
+    <Property Name="FIRST_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="LAST_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="Id" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TEACHERS_DATA_FANY">
+    <Key>
+      <PropertyRef Name="Teacher_ID" />
+    </Key>
+    <Property Name="Teacher_ID" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="SCHOOL_ID" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Emailaddress" Type="nvarchar" MaxLength="4000" />
+    <Property Name="FIRST_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="LAST_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="Id" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="MOEAdminDbModelStoreContainer">
+    <EntitySet Name="SCHOOLS_DATA" EntityType="Self.SCHOOLS_DATA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SCHOOLS_DATA_FANY" EntityType="Self.SCHOOLS_DATA_FANY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TEACHERS_DATA" EntityType="Self.TEACHERS_DATA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TEACHERS_DATA_FANY" EntityType="Self.TEACHERS_DATA_FANY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="STUDENTS_DATA" EntityType="Self.STUDENTS_DATA" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [STUDENTS_DATA].[STUDENT_ID] AS [STUDENT_ID], 
+    [STUDENTS_DATA].[SCHOOL_ID] AS [SCHOOL_ID], 
+    [STUDENTS_DATA].[FIRST_NAME] AS [FIRST_NAME], 
+    [STUDENTS_DATA].[Last_name] AS [Last_name], 
+    [STUDENTS_DATA].[NATIONALID_4Digit] AS [NATIONALID_4Digit], 
+    [STUDENTS_DATA].[Id] AS [Id]
+    FROM [dbo].[STUDENTS_DATA] AS [STUDENTS_DATA]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="STUDENTS_DATA_FANY" EntityType="Self.STUDENTS_DATA_FANY" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [STUDENTS_DATA_FANY].[STUDENT_ID] AS [STUDENT_ID], 
+    [STUDENTS_DATA_FANY].[SCHOOL_ID] AS [SCHOOL_ID], 
+    [STUDENTS_DATA_FANY].[FIRST_NAME] AS [FIRST_NAME], 
+    [STUDENTS_DATA_FANY].[Last_name] AS [Last_name], 
+    [STUDENTS_DATA_FANY].[NATIONALID_4Digit] AS [NATIONALID_4Digit], 
+    [STUDENTS_DATA_FANY].[Id] AS [Id]
+    FROM [dbo].[STUDENTS_DATA_FANY] AS [STUDENTS_DATA_FANY]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MOEAdminDbModelStoreContainer" CdmEntityContainer="MOEAdminDbEntities1">
+    <EntitySetMapping Name="SCHOOLS_DATA">
+      <EntityTypeMapping TypeName="MOEAdminDbModel.SCHOOLS_DATA">
+        <MappingFragment StoreEntitySet="SCHOOLS_DATA">
+          <ScalarProperty Name="School_ID" ColumnName="School_ID" />
+          <ScalarProperty Name="School_Name" ColumnName="School_Name" />
+          <ScalarProperty Name="District_ID" ColumnName="District_ID" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SchoolTypeId" ColumnName="SchoolTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SCHOOLS_DATA_FANY">
+      <EntityTypeMapping TypeName="MOEAdminDbModel.SCHOOLS_DATA_FANY">
+        <MappingFragment StoreEntitySet="SCHOOLS_DATA_FANY">
+          <ScalarProperty Name="School_ID" ColumnName="School_ID" />
+          <ScalarProperty Name="School_Name" ColumnName="School_Name" />
+          <ScalarProperty Name="District_ID" ColumnName="District_ID" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TEACHERS_DATA">
+      <EntityTypeMapping TypeName="MOEAdminDbModel.TEACHERS_DATA">
+        <MappingFragment StoreEntitySet="TEACHERS_DATA">
+          <ScalarProperty Name="Teacher_ID" ColumnName="Teacher_ID" />
+          <ScalarProperty Name="SCHOOL_ID" ColumnName="SCHOOL_ID" />
+          <ScalarProperty Name="Emailaddress" ColumnName="Emailaddress" />
+          <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+          <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TEACHERS_DATA_FANY">
+      <EntityTypeMapping TypeName="MOEAdminDbModel.TEACHERS_DATA_FANY">
+        <MappingFragment StoreEntitySet="TEACHERS_DATA_FANY">
+          <ScalarProperty Name="Teacher_ID" ColumnName="Teacher_ID" />
+          <ScalarProperty Name="SCHOOL_ID" ColumnName="SCHOOL_ID" />
+          <ScalarProperty Name="Emailaddress" ColumnName="Emailaddress" />
+          <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+          <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STUDENTS_DATA">
+      <EntityTypeMapping TypeName="MOEAdminDbModel.STUDENTS_DATA">
+        <MappingFragment StoreEntitySet="STUDENTS_DATA">
+          <ScalarProperty Name="STUDENT_ID" ColumnName="STUDENT_ID" />
+          <ScalarProperty Name="SCHOOL_ID" ColumnName="SCHOOL_ID" />
+          <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+          <ScalarProperty Name="Last_name" ColumnName="Last_name" />
+          <ScalarProperty Name="NATIONALID_4Digit" ColumnName="NATIONALID_4Digit" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STUDENTS_DATA_FANY">
+      <EntityTypeMapping TypeName="MOEAdminDbModel.STUDENTS_DATA_FANY">
+        <MappingFragment StoreEntitySet="STUDENTS_DATA_FANY">
+          <ScalarProperty Name="STUDENT_ID" ColumnName="STUDENT_ID" />
+          <ScalarProperty Name="SCHOOL_ID" ColumnName="SCHOOL_ID" />
+          <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+          <ScalarProperty Name="Last_name" ColumnName="Last_name" />
+          <ScalarProperty Name="NATIONALID_4Digit" ColumnName="NATIONALID_4Digit" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
